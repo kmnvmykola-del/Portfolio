@@ -252,13 +252,86 @@ h1 {
   place-items:center
 }
 
+.hero-preview {
+  display:block;
+  width:min(510px,100%);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:rgba(10,15,24,.8);
+  box-shadow:0 35px 100px rgba(0,0,0,.35);
+  transition:.3s;
+  position:relative
+}
+
+.hero-preview:hover {
+  transform:translateY(-5px);
+  border-color:rgba(103,232,249,.3)
+}
+
+.portfolio-preview {
+  min-height:260px;
+  padding:55px 35px;
+  background:radial-gradient(circle at 80% 20%,rgba(103,232,249,.16),transparent 30%),linear-gradient(135deg,#08101c,#101b2d)
+}
+
+.portfolio-logo {
+  font-family:"Space Grotesk",sans-serif;
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:-.05em
+}
+
+.portfolio-logo span {
+  color:var(--accent)
+}
+
+.portfolio-code {
+  display:grid;
+  gap:8px;
+  margin-top:35px;
+  font:500 12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:#93a4b8
+}
+
+.portfolio-code span:first-child {
+  color:var(--accent)
+}
+
+.portfolio-info {
+  padding:24px
+}
+
+.portfolio-info>span {
+  font-size:10px;
+  letter-spacing:.16em;
+  color:#6f7d91
+}
+
+.portfolio-info h3 {
+  font-size:28px;
+  margin:8px 0
+}
+
+.portfolio-info p {
+  color:var(--muted);
+  font-size:13px
+}
+
+.portfolio-info b {
+  display:inline-block;
+  margin-top:20px;
+  font-size:12px;
+  color:var(--accent)
+}
+
 .code-card {
   width:min(510px,100%);
   background:linear-gradient(180deg,rgba(19,27,41,.94),rgba(8,12,20,.94));
   border:1px solid rgba(134,163,199,.18);
   border-radius:20px;
   box-shadow:0 35px 100px rgba(0,0,0,.45),0 0 80px rgba(99,102,241,.08);
-  transform:rotate(2deg);
+  transform:none;
   overflow:hidden;
   position:relative;
   z-index:2
@@ -550,7 +623,7 @@ h1 {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
-  transform:perspective(500px) rotateX(55deg) rotateZ(-1deg);
+  transform:none;
   transform-origin:center
 }
 
@@ -622,7 +695,7 @@ h1 {
   position:absolute;
   left:50%;
   top:55%;
-  transform:translate(-50%,-50%) rotate(90deg);
+  transform:translate(-50%,-50%);
   font-size:80px;
   color:#e0e7ff;
   text-shadow:0 0 35px rgba(129,140,248,.5)
@@ -640,7 +713,7 @@ h1 {
   background:linear-gradient(135deg,#4ade80,#14532d);
   left:50%;
   top:58%;
-  transform:translate(-50%,-50%) rotate(-8deg);
+  transform:translate(-50%,-50%);
   box-shadow:0 0 50px rgba(74,222,128,.13)
 }
 
@@ -661,7 +734,7 @@ h1 {
   inset:0;
   background-image:linear-gradient(rgba(129,140,248,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(129,140,248,.09) 1px,transparent 1px);
   background-size:30px 30px;
-  transform:perspective(500px) rotateX(55deg) scale(1.35);
+  transform:none;
   transform-origin:center bottom
 }
 
@@ -828,6 +901,7 @@ footer a {
 }
 
 @media(max-width:1000px) {
+
   .hero {
     grid-template-columns:1fr
   }
@@ -857,9 +931,11 @@ footer a {
   .contact-card {
     grid-template-columns:1fr
   }
+
 }
 
 @media(max-width:760px) {
+
   nav {
     display:none
   }
@@ -945,9 +1021,20 @@ footer a {
   footer small,footer a {
     text-align:center
   }
+
+  .portfolio-preview {
+    min-height:230px;
+    padding:45px 25px
+  }
+
+  .portfolio-logo {
+    font-size:34px
+  }
+
 }
 
 @media(max-width:480px) {
+
   .skills-grid {
     grid-template-columns:1fr
   }
@@ -975,4 +1062,9 @@ footer a {
   .button {
     justify-content:center
   }
+
+  .portfolio-code {
+    font-size:10px
+  }
+
 }
